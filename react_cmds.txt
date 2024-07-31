@@ -1,0 +1,9 @@
+### to start app in local ##
+npm start
+
+
+## to create and run in docker ##
+1.create a Dockerfile -> path: frontend app (package.json )
+2.create a .docker.ignore file in same loaction
+3.Default port for react -> 3000
+4.EXPOSE web_portnum
