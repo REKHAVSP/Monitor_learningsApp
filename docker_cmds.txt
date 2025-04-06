@@ -1,0 +1,17 @@
+1.Create a Dockerfile
+2.Create .docker.ignore 
+3.Build the docker :: This create the image
+   
+   cmd -> docker build -t <image_name> <path>
+
+    -> -t :: tag
+    ->image_name :: a new that to be created on image_name
+    ->path :: . path of Dockerfile
+
+4.Run the docker with port number :: this creates the containers
+    cmd -> docker run -p <exposed_port>:<default_AppPort> -t <image_name>
+
+    -> -p :: port
+    ->exposed_port :: given in Dockerfile/Port run in browser
+    ->default_AppPort :: Default docker/application local port number
+    ->image_name :: create container under the image
