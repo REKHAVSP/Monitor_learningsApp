@@ -22,7 +22,8 @@ jobs:
           node-version: '16.20.2'  # or any Node.js version you need
       - name: Print current directory
         run: pwd
-
+      - name: Install npm
+        run: npm install
       - name: Install dependencies
         run: |
           if [ -f package-lock.json ]; then
