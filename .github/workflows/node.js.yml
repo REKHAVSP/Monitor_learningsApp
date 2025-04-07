@@ -20,6 +20,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.20.2'  # or any Node.js version you need
+      - name: Change to frontend dir
+        run: cd frontend_app          
       - name: Print current directory
         run: pwd
       - name: Install npm
