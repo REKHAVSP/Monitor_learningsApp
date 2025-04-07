@@ -24,15 +24,27 @@ jobs:
         run: cd frontend_app          
       - name: Print current directory
         run: pwd
-      - name: Install npm
-        run: npm install
+
       - name: Install dependencies
         run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+          echo "Current directory before moving up:"
+          pwd
+          ls -l
+
+          echo "\nMoving up one directory..."
+          cd ..
+          echo "Current directory after moving up:"
+          pwd
+          ls -l
+
+          echo "\nNavigating to frontend_app directory..."
+          cd frontend_app
+          echo "Current directory after navigating to frontend_app:"
+          pwd
+          ls -l
+
+          echo "\nInstalling npm dependencies..."
+          npm install
       - name: Run tests
         run: |
           npm test  # Or the relevant test command you use
