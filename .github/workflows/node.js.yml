@@ -30,13 +30,7 @@ jobs:
           echo "Current directory before moving up:"
           pwd
           ls -l
-
-          echo "\nMoving up one directory..."
-          cd ..
-          echo "Current directory after moving up:"
-          pwd
-          ls -l
-
+          
           echo "\nNavigating to frontend_app directory..."
           cd frontend_app
           echo "Current directory after navigating to frontend_app:"
