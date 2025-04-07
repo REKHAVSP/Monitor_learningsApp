@@ -41,4 +41,13 @@ jobs:
           npm install
       - name: Run tests
         run: |
+          echo "Current directory of test before moving up:"
+          pwd
+          ls -l      
+
+          echo "\nNavigating to frontend_app directory for test run..."
+          cd frontend_app
+          echo "Current directory after navigating to frontend_app:"
+          pwd
+          ls -l          
           npm test  # Or the relevant test command you use
