@@ -1,0 +1,53 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.20.2'  # or any Node.js version you need
+      - name: Change to frontend dir
+        run: cd frontend_app          
+      - name: Print current directory
+        run: pwd
+
+      - name: Install dependencies
+        run: |
+          echo "Current directory before moving up:"
+          pwd
+          ls -l
+          
+          echo "\nNavigating to frontend_app directory..."
+          cd frontend_app
+          echo "Current directory after navigating to frontend_app:"
+          pwd
+          ls -l
+
+          echo "\nInstalling npm dependencies..."
+          npm install
+      - name: Run tests
+        run: |
+          echo "Current directory of test before moving up:"
+          pwd
+          ls -l      
+
+          echo "\nNavigating to frontend_app directory for test run..."
+          cd frontend_app
+          echo "Current directory after navigating to frontend_app:"
+          pwd
+          ls -l          
+          npm test  # Or the relevant test command you use
