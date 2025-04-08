@@ -31,5 +31,5 @@ jobs:
         npm run build --if-present
     - name: Run tests
       run: |
-        cd xx  # And here too
+        cd frontend_app  # And here too
         npm test
